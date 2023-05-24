@@ -70,35 +70,9 @@
                     <div id="resultBox" class="incorrect">
                               {{ flag }}
                   </div>
-
                {% endif %}
             {% endif %}
               </div>
-        
-        <!-- <script>
-            function checkFlag() {
-                var flagInput = document.getElementById("flagInput").value;
-                var resultBox = document.getElementById("resultBox");
-        
-                // Perform AJAX request to submit the flag
-                var xhr = new XMLHttpRequest();
-                xhr.open("POST", "{% url 'challenges' %}", true);
-                xhr.setRequestHeader("Content-Type", "application/x-www-form-urlencoded");
-                xhr.onreadystatechange = function () {
-                    if (xhr.readyState === XMLHttpRequest.DONE) {
-                        if (xhr.status === 200) {
-                            // Flag submission successful
-                            resultBox.innerHTML = "<p class='success-message'>Flag submitted successfully!</p>";
-                            resultBox.className = "correct";
-                        } else {
-                            // Flag submission failed
-                            resultBox.innerHTML = "<p class='error-message'>Flag submission failed. Please try again.</p>";
-                            resultBox.className = "incorrect";
-                        }
-                    }
-                };
-                xhr.send("flag=" + encodeURIComponent(flagInput));
-            }
-        </script> -->
+      
         
 {% endblock content %}
