@@ -1,0 +1,88 @@
+{% extends 'base.html' %}
+
+{% block content %}
+    <div class="container">
+      
+       {% include 'navbar.html' %}   
+        
+        <div
+  style="
+    padding: 10px;
+    background-color: black;
+    border-radius: 6px;
+    margin: 20px 0;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+  "
+>
+  <span
+    >⚡ warning : no automated tools only maunal approach allowed!!!
+    &nbsp;
+  </span>
+</div>
+
+
+<div align="center" class="login-form">
+    <h2>Login</h2>
+    <form method="post" action="{% url 'login' %}">
+        {% csrf_token %}
+        <div class="form-group">
+            <label for="username">Username</label>
+            <input type="text" id="username" name="username" placeholder="Enter your username" class="cool-input aaa-input">
+        </div><br> 
+        <div class="form-group">
+            <label for="password">Password</label>
+            <input type="password" id="password" name="password" placeholder="Enter your password" class="cool-input aaa-input">
+        </div><br><br>  
+        <button type="submit" class="btn cool-button">Submit</button>
+    </form>
+</div>
+
+
+  
+<br><br><br>  
+
+{% if form.errors %}
+    <div class="incorrect">
+        Invalid Credentials
+    </div>
+{% endif %}
+<style>
+
+.aaaa-input {
+  background-color: #33354b; /* Replace <desired-color> with the attractive color from main.css */
+  color: #fff; /* Set the text color to white for better visibility */
+}
+
+
+.cool-input {
+  border: none;
+  background-color: #33354b;
+  color: #ff518c;
+  font-size: 16px;
+  padding: 10px 15px;
+  border-radius: 5px;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.3);
+  transition: background-color 0.3s ease;
+}
+
+.cool-input:focus {
+  background-color: #33354b;
+  color: #ff88b2; /* Update the color value to a lighter shade */
+  outline: none;
+}
+
+
+</style>
+
+
+<div align="center" class="nav-right">
+  <a href="https://twitter.com/in1tcr3w?lang=en" target="_blank">
+      <i class="fab fa-twitter"></i>
+  </a>
+  <a href="https://discord.gg/6mEXwHEX" target="_blank">
+      <i class="fab fa-discord"></i>
+  </a>
+</div>
+{% endblock %}

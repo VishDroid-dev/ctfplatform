@@ -1,0 +1,127 @@
+{% extends 'base.html' %}
+
+{% block content %}
+    <div class="container">
+        
+        {% include 'navbar.html' %}
+    
+        
+        
+        <div
+  style="
+    padding: 10px;
+    background-color: black;
+    border-radius: 6px;
+    margin: 20px 0;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+  "
+>
+  <span
+    >🔔 Rules for this CTF challenge
+    &nbsp;
+  </span>
+</div>
+
+
+        
+        
+<div class="warmups">
+    <h1>Rules: </h1>
+        <hr>
+        <h3>Flag Submission:</h3> <h4>When you find a flag, submit it using the designated submission method there is only one submission filed for all the flags.</h4><hr>
+        <h3>Use of Tools:</h3> <h4>The use of standard hacking tools and scripts is allowed unless explicitly mentioned otherwise. However, Denial of Service (DoS) attacks and any actions that may cause harm to the CTF infrastructure are strictly prohibited.</h4><hr>
+        <h3>Flag Submission:</h3> <h4>When you find a flag, submit it using the designated submission method there is only one submission filed for all the flags.</h4><hr>
+        <h3>Reporting Issues:</h3><h4> If you encounter any technical issues, vulnerabilities, or bugs in the platform, please report them to the organizers immediately. Do not exploit or abuse such issues for personal gain.</h4><hr>
+        
+
+      </div>
+
+      <style>
+      .nav-right {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+      }
+      
+      .nav-right a {
+        display: inline-block;
+        
+        font-size: 30px;
+      }
+      
+      .nav-right i {
+        font-size: 30px;
+      }
+      .nav-right .btn {
+        margin-right: 10px;
+      }
+      
+      
+      </style>
+      <div class="nav-right">
+          <a href="https://twitter.com/in1tcr3w?lang=en" target="_blank">
+              <i class="fab fa-twitter"></i>
+          </a>
+          <a href="https://discord.gg/6mEXwHEX" target="_blank">
+              <i class="fab fa-discord"></i>
+          </a>
+      </div>
+    
+    
+<div
+  class="modal fade"
+  id="about"
+  tabindex="-1"
+  role="dialog"
+  aria-labelledby="aboutLabel"
+  aria-hidden="true"
+>
+  <div class="modal-dialog modal-lg modal-dialog-centered" role="document">
+    <div class="modal-content">
+      <div class="modal-header">
+        <h5 class="modal-title" id="aboutLabel">About</h5>
+        <button
+          type="button"
+          class="close"
+          data-dismiss="modal"
+          aria-label="Close"
+        >
+          <span aria-hidden="true">&times;</span>
+        </button>
+      </div>
+      <div class="modal-body">
+        <b>Initcrew </b> CTF
+        <a href="https://initcrew.com" target="_blank"
+          ><span class="pwn">Pwn</span><span class="function">()</span></a
+        >.
+        <br />
+        New challenges are added often.
+        <br /><br />
+        <span
+          >😅 Cards UI idea stolen from
+          <a class="function" href="https://xss.pwnfunction.com" target="_blank"
+            >JustCTF</a
+          >.</span
+        >
+        <br />
+        <span
+          >😄 Bugs/Typos/Feedback/Request, DM me
+          <a
+            class="function"
+            href="https://twitter.com/in1tcr3w?lang=en"
+            target="_blank"
+            >@PwnFunction</a
+          ></span
+        >
+      </div>
+      <div class="modal-footer">
+        <button type="button" class="btn btn-danger" data-dismiss="modal">
+          Close
+        </button>
+      </div>
+    </div>
+  </div>
+</div>
+{% endblock content %}

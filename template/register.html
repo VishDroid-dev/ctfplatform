@@ -1,0 +1,267 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+	<meta name="generator" content="Hugo 0.91.2" />
+    
+    
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta http-equiv="X-UA-Compatible" content="ie=edge">
+
+
+<meta name="google-site-verification" content="dDU-Hj4a7MtbmJR9e53fGaDlJbE-lsWLoSN2PZSz25w" />
+
+
+<meta name="description" content="Initcrew CTF" />
+<meta name="robots" content="max-snippet:-1, max-image-preview:large, max-video-preview:-1" />
+<link rel="canonical" href="https://initcrew.com/" />
+<meta property="og:type" content="website" />
+<meta property="og:title" content="Initcrew-CTF" />
+<meta property="og:description" content="Initcrew CTF" />
+<meta property="og:url" content="https://ctf.initcrew.com/" />
+<meta property="og:site_name" content="InitCrew" />
+<meta name="twitter:card" content="summary" />
+<meta name="twitter:description" content="Initcrew CTF" />
+<meta name="twitter:title" content="Initcrew CTF" />
+    
+<link rel="icon" type="image/png" href="/favicon.png" />
+    <title>Initcrew CTF</title>
+
+    
+    
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.12.1/css/all.min.css"
+    integrity="sha256-mmgLkCYLUQbXn0B1SRqzHar6dCnv9oZFPEC1g1cwlkk=" crossorigin="anonymous" />
+<link rel="stylesheet" href="https://unpkg.com/tippy.js@5/dist/backdrop.css" />
+    
+<link rel="stylesheet" href="https://initcorp.tech/css/main.css">
+<link rel="stylesheet" href="https://initcorp.tech/css/button.css">
+<link rel="stylesheet" href="https://initcorp.tech/css/prism/pwn.css">
+<link rel="stylesheet" href="https://initcorp.tech/css/tippy/tippy-pwn.css">
+    <link rel="stylesheet" href="https://initcorp.tech/css/custom.css">
+</head>
+
+<body>
+    <div class="container">
+      
+        <nav class="nav">
+            <div class="nav-left">
+                <div class="logo">
+                    <a href="/">
+                        <span class="pwn">InitCrew</span><span class="function">()</span>
+                    </a>
+                </div>
+            </div>
+            <div class="nav-right">
+                <button class="btn  animate__fadeInRight" onclick="location='/login'">Login</button>
+                <button class="btn animate__animated animate__fadeInRight" onclick="location='/scoreboard'">Scoreboard</button>
+            </div>
+        </nav>
+        
+    
+        
+        
+        <div
+  style="
+    padding: 10px;
+    background-color: black;
+    border-radius: 6px;
+    margin: 20px 0;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+  "
+>
+  <span
+    >⚡ warning : no automated tools only maunal approach allowed!!!
+    &nbsp;
+  </span>
+</div>
+
+
+        
+
+
+
+<div align="center" class="min-h-full flex items-center justify-center py-12 px-4 sm:px-6 lg:px-8">
+    <div class="max-w-md w-full space-y-8">
+    <h2 class="mt-6 text-center text-3xl font-bold text-gray-100">
+        Create Account
+        </h2>
+        
+        {% if form.errors %}
+        <div class="bg-red-500 rounded-md">
+            {% for field in form %}
+                {% for error in field.errors %}
+                <li class="text-gray-100 text-lg ml-2">
+                    {{error}}
+                </li>
+                {% endfor %}
+            {% endfor %}
+        </div>
+        {% endif %}
+    <form class="mt-8 space-y-6" action="" method="POST">
+        {% csrf_token %}
+        <input type="hidden" name="remember" value="true">
+        <div class="rounded-md shadow-sm -space-y-px">
+        <div class="my-4"> 
+            <label for="username" class="sr-only">Username</label>
+            <input id="username" name="username" type="text" autocomplete="name" required class="cool-input aaa-input" class="appearance-none rounded-none relative block w-full px-3 py-2 border border-gray-300 placeholder-gray-500 text-gray-900 rounded-t-md focus:outline-none focus:ring-indigo-500 focus:border-indigo-500 focus:z-10 sm:text-sm" placeholder="Username">
+        </div><br>
+        <div>
+            <label for="email-address" class="sr-only">Password</label>
+            <input id="email-address" name="email" type="email" autocomplete="current-password" required class="cool-input aaa-input" class="mb-5 appearance-none rounded-none relative block w-full px-3 py-2 border border-gray-300 placeholder-gray-500 text-gray-900 rounded-b-md focus:outline-none focus:ring-indigo-500 focus:border-indigo-500 focus:z-10 sm:text-sm" placeholder="Email">
+        </div><br>
+        <div>
+            <label for="password" class="sr-only">Password</label>
+            <input id="password" name="password1" type="password" autocomplete="current-password" required class="cool-input aaa-input" class="mb-5 appearance-none rounded-none relative block w-full px-3 py-2 border border-gray-300 placeholder-gray-500 text-gray-900 rounded-b-md focus:outline-none focus:ring-indigo-500 focus:border-indigo-500 focus:z-10 sm:text-sm" placeholder="Password">
+        </div><br>
+        <div>
+            <label for="password" class="sr-only">Confirm Password</label>
+            <input id="password" name="password2" type="password" autocomplete="current-password" required  class="cool-input aaa-input" class="appearance-none rounded-none relative block w-full px-3 py-2 border border-gray-300 placeholder-gray-500 text-gray-900 rounded-b-md focus:outline-none focus:ring-indigo-500 focus:border-indigo-500 focus:z-10 sm:text-sm" placeholder="Confirm Password">
+        </div>
+        </div>
+
+
+        <br><div>
+        <button type="submit" class="btn cool-button group relative w-full flex justify-center py-2 px-4 border border-transparent text-sm font-medium rounded-md text-gray-100 text-gray-100 bg-gradient-to-r from-blue-500 to-cyan-500 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-indigo-500">
+            <span class="absolute left-0 inset-y-0 flex items-center pl-3">
+            <!-- Heroicon name: solid/lock-closed -->
+
+            </span>
+            Register
+        </button>
+        </div>
+    </form>
+    
+        <a class="text-white" href="/login">
+            <h1 class="text-center mt-5">Already have an account? Login</h1>
+        </a>
+    </div>
+</div>
+
+
+
+
+
+
+  
+<br><br><br>  
+
+<style>
+
+.aaaa-input {
+  background-color: #33354b; /* Replace <desired-color> with the attractive color from main.css */
+  color: #fff; /* Set the text color to white for better visibility */
+}
+
+
+.cool-input {
+  border: none;
+  background-color: #33354b;
+  color: #ff518c;
+  font-size: 16px;
+  padding: 10px 15px;
+  border-radius: 5px;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.3);
+  transition: background-color 0.3s ease;
+}
+
+.cool-input:focus {
+  background-color: #33354b;
+  color: #ff88b2; /* Update the color value to a lighter shade */
+  outline: none;
+}
+
+
+</style>
+
+
+<div align="center" class="nav-right">
+    <a href="https://twitter.com/in1tcr3w?lang=en" target="_blank">
+        <i class="fab fa-twitter"></i>
+    </a>
+    <a href="https://discord.gg/6mEXwHEX" target="_blank">
+        <i class="fab fa-discord"></i>
+    </a>
+</div>
+    
+    
+<div
+  class="modal fade"
+  id="about"
+  tabindex="-1"
+  role="dialog"
+  aria-labelledby="aboutLabel"
+  aria-hidden="true"
+>
+  <div class="modal-dialog modal-lg modal-dialog-centered" role="document">
+    <div class="modal-content">
+      <div class="modal-header">
+        <h5 class="modal-title" id="aboutLabel">About</h5>
+        <button
+          type="button"
+          class="close"
+          data-dismiss="modal"
+          aria-label="Close"
+        >
+          <span aria-hidden="true">&times;</span>
+        </button>
+      </div>
+      <div class="modal-body">
+        <b>XSS Game</b> is a collection of XSS challenges created by
+        <a href="https://youtube.com/PwnFunction" target="_blank"
+          ><span class="pwn">Pwn</span><span class="function">()</span></a
+        >.
+        <br />
+        New challenges are added often.
+        <br /><br />
+        <span
+          >😅 Cards UI idea stolen from
+          <a class="function" href="https://2019.justctf.team/" target="_blank"
+            >JustCTF</a
+          >.</span
+        >
+        <br />
+        <span
+          >😄 Bugs/Typos/Feedback/Request, DM me
+          <a
+            class="function"
+            href="https://twitter.com/@PwnFunction"
+            target="_blank"
+            >@PwnFunction</a
+          ></span
+        >
+      </div>
+      <div class="modal-footer">
+        <button type="button" class="btn btn-danger" data-dismiss="modal">
+          Close
+        </button>
+      </div>
+    </div>
+  </div>
+</div>
+
+
+    
+    
+<script src="https://code.jquery.com/jquery-3.4.1.slim.min.js"
+    integrity="sha384-J6qa4849blE2+poT4WnyKhv5vZF5SrPo0iEjwBvKU7imGFAV0wwj1yYfoRSJoZ+n"
+    crossorigin="anonymous"></script>
+<script src="https://unpkg.com/popper.js@1"></script>
+<script src="https://unpkg.com/tippy.js@5"></script>
+<script src="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/js/bootstrap.min.js"
+    integrity="sha384-wfSDF2E50Y2D1uUdj0O3uMBJnjuUD4Ih7YwaYd1iqfktj0Uod8GCExl3Og8ifwB6"
+    crossorigin="anonymous"></script>
+    
+<script async src="https://www.googletagmanager.com/gtag/js?id=UA-158764437-1"></script>
+<script>
+    window.dataLayer = window.dataLayer || [];
+    function gtag() { dataLayer.push(arguments); }
+    gtag('js', new Date());
+
+    gtag('config', 'UA-158764437-1');
+</script>
+</body>
+
+</html>

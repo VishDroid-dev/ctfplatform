@@ -1,0 +1,20 @@
+<nav class="nav">
+    <div class="nav-left">
+        <div class="logo">
+            <a href="/">
+                <span class="pwn">InitCrew</span><span class="function">()</span>
+            </a>
+        </div>
+    </div>
+    <div class="nav-right">
+        {% if request.user.is_authenticated %}
+        <button class="btn animate__animated animate__fadeInRight" onclick="location='/scoreboard/'">Scoreboard</button>
+        <button class="btn animate__animated animate__fadeInRight" onclick="location='/logout/'">Logout</button>
+        {% else %}
+            <button class="btn animate__animated animate__fadeInRight" onclick="location='/login/'">Login</button>
+            <button class="btn animate__animated animate__fadeInRight" onclick="location='/register/'">Register</button>
+            <button class="btn animate__animated animate__fadeInRight" onclick="location='/scoreboard/'">Scoreboard</button>
+
+        {% endif %}
+    </div>
+</nav>

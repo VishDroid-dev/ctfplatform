@@ -1,0 +1,104 @@
+{% extends 'base.html' %}
+
+{% block content %}
+    <div class="container">
+        
+        
+     {% include 'navbar.html' %}
+        
+        <style>
+#resultBox {
+  margin-top: 20px;
+  width: 200px;
+  height: 30px;
+  border-radius: 5px;
+  text-align: center;
+  font-weight: bold;
+  font-size: 14px;
+  color: #fff;
+  line-height: 30px;
+}
+
+#resultBox.correct {
+  background-color: #53dc87;
+}
+
+#resultBox.incorrect {
+  background-color: #ff4f61;
+}
+
+        </style>
+
+        <div
+  style="
+    padding: 10px;
+    background-color: black;
+    border-radius: 6px;
+    margin: 20px 0;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+  "
+>
+  <span
+    >🔔 Please note that this challenge must be done only through manual methods, without the use of brute force or automated tools nothing will work
+    &nbsp;
+  </span>
+</div>
+
+
+         <div align="center" class="warmups">
+            <h2>Challenge Description</h2>
+            <h3>Hack this Corporation</h3>
+            <p>All the flags that you find can be submitted using the input field below.</p>
+            <hr>
+            <form method="post" action="{% url 'challenges' %}">
+                {% csrf_token %}
+                <h4>Enter the flag:</h4>
+                <div class="input-container neon-retro">
+                    <input type="text" id="flagInput" name="flag" placeholder="Enter flag">
+                </div><br>
+                <button type="submit" class="btn">Submit</button>
+            </form>
+            <br>
+            {% if flag %}
+                {% if flag == "correct" %}
+                    <div id="resultBox" class="correct">
+                              {{ flag }}
+                    </div>
+                {% else %}
+                    <div id="resultBox" class="incorrect">
+                              {{ flag }}
+                  </div>
+
+               {% endif %}
+            {% endif %}
+              </div>
+        
+        <!-- <script>
+            function checkFlag() {
+                var flagInput = document.getElementById("flagInput").value;
+                var resultBox = document.getElementById("resultBox");
+        
+                // Perform AJAX request to submit the flag
+                var xhr = new XMLHttpRequest();
+                xhr.open("POST", "{% url 'challenges' %}", true);
+                xhr.setRequestHeader("Content-Type", "application/x-www-form-urlencoded");
+                xhr.onreadystatechange = function () {
+                    if (xhr.readyState === XMLHttpRequest.DONE) {
+                        if (xhr.status === 200) {
+                            // Flag submission successful
+                            resultBox.innerHTML = "<p class='success-message'>Flag submitted successfully!</p>";
+                            resultBox.className = "correct";
+                        } else {
+                            // Flag submission failed
+                            resultBox.innerHTML = "<p class='error-message'>Flag submission failed. Please try again.</p>";
+                            resultBox.className = "incorrect";
+                        }
+                    }
+                };
+                xhr.send("flag=" + encodeURIComponent(flagInput));
+            }
+        </script> -->
+        
+{% endblock content %}

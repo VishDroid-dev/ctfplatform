@@ -1,0 +1,100 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+	<meta name="generator" content="Hugo 0.91.2" />
+    
+    
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta http-equiv="X-UA-Compatible" content="ie=edge">
+
+
+<meta name="google-site-verification" content="dDU-Hj4a7MtbmJR9e53fGaDlJbE-lsWLoSN2PZSz25w" />
+
+
+<meta name="description" content="XSS Game: Learn Cross Site Scripting (XSS) by completing challenges!" />
+<meta name="robots" content="max-snippet:-1, max-image-preview:large, max-video-preview:-1" />
+<link rel="canonical" href="https://xss.pwnfunction.com/" />
+<meta property="og:type" content="website" />
+<meta property="og:title" content="Initcrew-CTF" />
+<meta property="og:description" content="XSS Game: Learn Cross Site Scripting (XSS) by completing challenges!" />
+<meta property="og:url" content="https://ctf.initcrew.com/" />
+<meta property="og:site_name" content="InitCrew" />
+<meta name="twitter:card" content="summary" />
+<meta name="twitter:description" content="XSS Game: Learn Cross Site Scripting (XSS) by completing challenges!" />
+<meta name="twitter:title" content="XSS Game - Learning XSS Made Simple! | Created by PwnFunction" />
+    
+<link rel="icon" type="image/png" href="/favicon.png" />
+    <title>XSS Game - Learning XSS Made Simple! | Created by PwnFunction</title>
+
+    
+    
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.12.1/css/all.min.css"
+    integrity="sha256-mmgLkCYLUQbXn0B1SRqzHar6dCnv9oZFPEC1g1cwlkk=" crossorigin="anonymous" />
+<link rel="stylesheet" href="https://unpkg.com/tippy.js@5/dist/backdrop.css" />
+    
+<link rel="stylesheet" href="https://initcorp.tech/css/main.css">
+<link rel="stylesheet" href="https://initcorp.tech/css/button.css">
+<link rel="stylesheet" href="https://initcorp.tech/css/scoreboard.css">
+<link rel="stylesheet" href="https://initcorp.tech/css/prism/pwn.css">
+<link rel="stylesheet" href="https://initcorp.tech/css/tippy/tippy-pwn.css">
+    <link rel="stylesheet" href="https://initcorp.tech/css/custom.css">
+</head>
+
+<body>
+    <div class="container">
+        
+        
+        {% include 'nav2.html' %}
+        
+
+        
+        
+
+
+</div>
+
+
+
+<div align="center" class="scoreboard-container cyberpunk">
+    <table class="scoreboard-table">
+      <thead>
+        <tr>
+          <th>Rank</th>
+          <th>Username</th>
+          <th>Score</th>
+        </tr>
+      </thead>
+      <tbody>
+        {% for user in users %}
+        <tr>
+          <td>{{ forloop.counter }}</td>
+          <td>{{ user.username }}</td>
+          <td>{{ user.points }}</td>
+        </tr>
+        {% endfor %}
+      </tbody>
+    </table>
+  </div>
+  
+
+
+
+ 
+
+
+  
+    
+<script src="https://code.jquery.com/jquery-3.4.1.slim.min.js"
+    integrity="sha384-J6qa4849blE2+poT4WnyKhv5vZF5SrPo0iEjwBvKU7imGFAV0wwj1yYfoRSJoZ+n"
+    crossorigin="anonymous"></script>
+<script src="https://unpkg.com/popper.js@1"></script>
+<script src="https://unpkg.com/tippy.js@5"></script>
+<script src="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/js/bootstrap.min.js"
+    integrity="sha384-wfSDF2E50Y2D1uUdj0O3uMBJnjuUD4Ih7YwaYd1iqfktj0Uod8GCExl3Og8ifwB6"
+    crossorigin="anonymous"></script>
+
+</body>
+
+</html>
