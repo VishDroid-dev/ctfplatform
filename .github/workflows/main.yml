@@ -21,7 +21,7 @@ jobs:
         with:
           host: ${{ secrets.REMOTEHOST }}
           username: ${{ secrets.USERNAME }}
-          key: ${{ secrets.PRIVATEKEY }}
+          password: ${{ secrets.PASSWORD }}
 
       - name: Pull latest changes
         run: |
