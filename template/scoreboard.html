@@ -4,8 +4,6 @@
 <html lang="en">
 
 <head>
-  <meta name="generator" content="Hugo 0.91.2" />
-
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <meta http-equiv="X-UA-Compatible" content="ie=edge" />
@@ -60,33 +58,61 @@
 
 
 <div align="center" class="scoreboard-container cyberpunk">
-    <table class="scoreboard-table">
-      <thead>
-        <tr>
-          <th>Rank</th>
-          <th>Username</th>
-          <th>Score</th>
-        </tr>
-      </thead>
-      <tbody>
-        {% for user in users %}
-        <tr>
-          <td>{{ forloop.counter }}</td>
-          <td>{{ user.username }}</td>
-          <td>{{ user.points }}</td>
-        </tr>
-        {% endfor %}
-      </tbody>
-    </table>
-  </div>
-  
+  <table class="scoreboard-table">
+    <thead>
+      <tr>
+        <th>Rank</th>
+        <th>Username</th>
+        <th>Score</th>
+      </tr>
+    </thead>
+    <tbody>
+      {% for user in users %}
+      <tr>
+        <td>{{ forloop.counter }}</td>
+        <td>{{ user.username }}</td>
+        <td>{{ user.points }}</td>
+      </tr>
+      {% endfor %}
+    </tbody>
+  </table>
+</div>
 
+<style>
+  .scoreboard-container {
+    background-color: transparent;
+    padding: 20px;
+    border-radius: 8px;
+    width: 800px;
+    margin: 0 auto;
+  }
 
+  .scoreboard-table {
+    width: 100%;
+    border-collapse: collapse;
+  }
 
- 
+  th,
+  td {
+    padding: 10px;
+    text-align: center;
+  }
 
+  thead {
+    color: #fff;
+  }
 
-  
+  tbody tr:hover {
+    background-color: #ff518c;
+  }
+  @media only screen and (max-width: 600px) {
+    .scoreboard-container {
+      width: 100%;
+      padding: 10px;
+    }
+  }
+</style>
+   
     
 <script src="https://code.jquery.com/jquery-3.4.1.slim.min.js"
     integrity="sha384-J6qa4849blE2+poT4WnyKhv5vZF5SrPo0iEjwBvKU7imGFAV0wwj1yYfoRSJoZ+n"

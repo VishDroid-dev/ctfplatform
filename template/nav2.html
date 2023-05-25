@@ -8,7 +8,7 @@
     </div>
     <div class="nav-right">
         {% if request.user.is_authenticated %}
-        <button class="btn animate__animated animate__fadeInRight" onclick="location='/challenges/'">Challange</button>
+        <button class="btn animate__animated animate__fadeInRight" onclick="location='/challenges/'">Challenge</button>
         <button class="btn animate__animated animate__fadeInRight" onclick="location='/logout/'">Logout</button>
         {% else %}
             <button class="btn animate__animated animate__fadeInRight" onclick="location='/login/'">Login</button>

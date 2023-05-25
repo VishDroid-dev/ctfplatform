@@ -1,0 +1,102 @@
+.nav-right .btn {
+    margin-right: 10px;
+  }
+  
+  
+  .btn {
+                  animation-duration: 1s;
+                  animation-fill-mode: both;
+              }
+              .animate__fadeInRight {
+                  animation-name: fadeInRight;
+              }
+              @keyframes fadeInRight {
+                  from {
+                      opacity: 0;
+                      transform: translateX(20px);
+                  }
+                  to {
+                      opacity: 1;
+                      transform: translateX(0);
+                  }
+              }
+          
+              /* Mobile styles */
+              @media only screen and (max-width: 600px) {
+                  .nav {
+                      display: flex;
+                      flex-direction: column;
+                      align-items: center;
+                  }
+                  .nav-right {
+                      margin-top: 10px;
+                  }
+                  .btn {
+                      margin-bottom: 10px;
+                  }
+              }
+  
+              .neon-retro input[type="text"] {
+    padding: 10px;
+    border: none;
+    background-color: #1c1e29;
+    color: #ff518c;
+    font-size: 13px;
+    font-family: Consolas, Monaco, 'Andale Mono', 'Ubuntu Mono', monospace;
+    text-shadow: none;
+    outline: none;
+    border-radius: 5px;
+    border: 2px solid #ff518c;
+  }
+  
+  .neon-retro input[type="text"]::placeholder {
+    color: #ff518c;
+  }
+  
+  .neon-retro:before {
+    content: "";
+    position: absolute;
+    top: -2px;
+    left: -2px;
+    right: -2px;
+    bottom: -2px;
+    border-radius: 5px;
+    background-color: #1c1e29;
+    box-shadow: none;
+    z-index: -1;
+  }
+  
+  
+  button {
+    padding: 10px 20px;
+    border: none;
+    background-color: #1c1e29;
+    color: #ff518c;
+    font-size: 13px;
+    font-family: Consolas, Monaco, 'Andale Mono', 'Ubuntu Mono', monospace;
+    text-shadow: none;
+    outline: none;
+    border-radius: 5px;
+    border: 2px solid #ff518c;
+    cursor: pointer;
+  }
+  
+  button:hover {
+    background-color: #ff518c;
+    color: #1c1e29;
+  }
+  
+  button:hover span {
+    color: #00d7e9;
+    text-shadow: 0 0 5px #00d7e9, 0 0 10px #00d7e9, 0 0 15px #00d7e9;
+  }
+  
+  button:active {
+    background-color: #33354b;
+    border-color: #33354b;
+    color: #ff518c;
+  }
+  
+  button span {
+    transition: color 0.3s ease;
+  }
