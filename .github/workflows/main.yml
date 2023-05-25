@@ -1,15 +1,39 @@
-name: Deploy Workflow
+name: Django CI
 
 on:
   push:
     branches:
-      - server 
+      - server
   pull_request:
     branches:
-      - server  
+      - server
 
 jobs:
+  ci:
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: Checkout code
+        uses: actions/checkout@v2
+
+      - name: Set up Python
+        uses: actions/setup-python@v2
+        with:
+          python-version: 3.9
+
+      - name: Install Dependencies
+        run: |
+          python -m pip install --upgrade pip
+          pip install -r requirements.txt
+
+      - name: Run Tests
+        run: |
+          python manage.py test
+        id: test_result
+
   deploy:
+    needs: ci
+    if: ${{ needs.ci.result == 'success' }}
     runs-on: ubuntu-latest
 
     steps:
@@ -17,7 +41,7 @@ jobs:
         uses: actions/checkout@v2
 
       - name: SSH into remote server
-        uses: appleboy/ssh-action@master
+        uses: appleboy/ssh-action@v2
         with:
           host: ${{ secrets.REMOTEHOST }}
           username: ${{ secrets.USERNAME }}
