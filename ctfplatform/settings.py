@@ -28,9 +28,9 @@ DEBUG = False
 ALLOWED_HOSTS = ['*']
 
 CSRF_TRUSTED_ORIGINS = [
-    "https://initcorp.tech"
-    "https://initcrew.com"
-    "https;//*.initcrew.com"
+    "https://initcorp.tech",
+    "https://initcrew.com",
+    "https;//*.initcrew.com",
 ]
 
 AUTH_USER_MODEL = "core.CustomUser"
