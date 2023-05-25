@@ -2,44 +2,53 @@
 <html lang="en">
 
 <head>
-	<meta name="generator" content="Hugo 0.91.2" />
-    
-    
-<meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
-<meta http-equiv="X-UA-Compatible" content="ie=edge">
+	<head>
+    <meta name="generator" content="Hugo 0.91.2" />
 
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta http-equiv="X-UA-Compatible" content="ie=edge" />
 
-<meta name="google-site-verification" content="dDU-Hj4a7MtbmJR9e53fGaDlJbE-lsWLoSN2PZSz25w" />
+    <meta
+      name="google-site-verification"
+      content="dDU-Hj4a7MtbmJR9e53fGaDlJbE-lsWLoSN2PZSz25w"
+    />
 
+    <meta name="description" content="Initcrew CTF" />
+    <meta
+      name="robots"
+      content="max-snippet:-1, max-image-preview:large, max-video-preview:-1"
+    />
+    <link rel="canonical" href="https://initcrew.com/" />
+    <meta property="og:type" content="website" />
+    <meta property="og:title" content="Initcrew-CTF" />
+    <meta property="og:description" content="Initcrew CTF" />
+    <meta property="og:url" content="https://ctf.initcrew.com/" />
+    <meta property="og:site_name" content="InitCrew" />
+    <meta name="twitter:card" content="summary" />
+    <meta name="twitter:description" content="Initcrew CTF" />
+    <meta name="twitter:title" content="Initcrew CTF" />
 
-<meta name="description" content="Initcrew CTF" />
-<meta name="robots" content="max-snippet:-1, max-image-preview:large, max-video-preview:-1" />
-<link rel="canonical" href="https://initcrew.com/" />
-<meta property="og:type" content="website" />
-<meta property="og:title" content="Initcrew-CTF" />
-<meta property="og:description" content="Initcrew CTF" />
-<meta property="og:url" content="https://ctf.initcrew.com/" />
-<meta property="og:site_name" content="InitCrew" />
-<meta name="twitter:card" content="summary" />
-<meta name="twitter:description" content="Initcrew CTF" />
-<meta name="twitter:title" content="Initcrew CTF" />
-    
-<link rel="icon" type="image/png" href="/favicon.png" />
+    <link rel="icon" type="image/png" href="/favicon.png" />
     <title>Initcrew CTF</title>
 
-    
-    
-<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.12.1/css/all.min.css"
-    integrity="sha256-mmgLkCYLUQbXn0B1SRqzHar6dCnv9oZFPEC1g1cwlkk=" crossorigin="anonymous" />
-<link rel="stylesheet" href="https://unpkg.com/tippy.js@5/dist/backdrop.css" />
-    
-<link rel="stylesheet" href="https://initcorp.tech/css/main.css">
-<link rel="stylesheet" href="https://initcorp.tech/css/button.css">
-<link rel="stylesheet" href="https://initcorp.tech/css/prism/pwn.css">
-<link rel="stylesheet" href="https://initcorp.tech/css/tippy/tippy-pwn.css">
-    <link rel="stylesheet" href="https://initcorp.tech/css/custom.css">
-</head>
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.12.1/css/all.min.css"
+      integrity="sha256-mmgLkCYLUQbXn0B1SRqzHar6dCnv9oZFPEC1g1cwlkk="
+      crossorigin="anonymous"
+    />
+    <link
+      rel="stylesheet"
+      href="https://unpkg.com/tippy.js@5/dist/backdrop.css"
+    />
+
+    <link rel="stylesheet" href="{% static 'css/main.css' %}" />
+    <link rel="stylesheet" href="{% static 'css/button.css' %}" />
+    <link rel="stylesheet" href="{% static 'css/pwn.css' %}" />
+    <link rel="stylesheet" href="{% static 'css/tippy-pwn.css' %}" />
+    <link rel="stylesheet" href="{% static 'css/custom.css' %}" />
+  </head>
 
 <body>
     <div class="container">
@@ -187,63 +196,7 @@
 </div>
     
     
-<div
-  class="modal fade"
-  id="about"
-  tabindex="-1"
-  role="dialog"
-  aria-labelledby="aboutLabel"
-  aria-hidden="true"
->
-  <div class="modal-dialog modal-lg modal-dialog-centered" role="document">
-    <div class="modal-content">
-      <div class="modal-header">
-        <h5 class="modal-title" id="aboutLabel">About</h5>
-        <button
-          type="button"
-          class="close"
-          data-dismiss="modal"
-          aria-label="Close"
-        >
-          <span aria-hidden="true">&times;</span>
-        </button>
-      </div>
-      <div class="modal-body">
-        <b>XSS Game</b> is a collection of XSS challenges created by
-        <a href="https://youtube.com/PwnFunction" target="_blank"
-          ><span class="pwn">Pwn</span><span class="function">()</span></a
-        >.
-        <br />
-        New challenges are added often.
-        <br /><br />
-        <span
-          >😅 Cards UI idea stolen from
-          <a class="function" href="https://2019.justctf.team/" target="_blank"
-            >JustCTF</a
-          >.</span
-        >
-        <br />
-        <span
-          >😄 Bugs/Typos/Feedback/Request, DM me
-          <a
-            class="function"
-            href="https://twitter.com/@PwnFunction"
-            target="_blank"
-            >@PwnFunction</a
-          ></span
-        >
-      </div>
-      <div class="modal-footer">
-        <button type="button" class="btn btn-danger" data-dismiss="modal">
-          Close
-        </button>
-      </div>
-    </div>
-  </div>
-</div>
-
-
-    
+  
     
 <script src="https://code.jquery.com/jquery-3.4.1.slim.min.js"
     integrity="sha384-J6qa4849blE2+poT4WnyKhv5vZF5SrPo0iEjwBvKU7imGFAV0wwj1yYfoRSJoZ+n"
