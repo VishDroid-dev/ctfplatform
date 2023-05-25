@@ -25,6 +25,19 @@ jobs:
         run: |
           python -m pip install --upgrade pip
           pip install -r requirements.txt
+          
+      - name: Set Django Settings Module
+        run: echo "DJANGO_SETTINGS_MODULE=ctfplatform.settings" >> $GITHUB_ENV
+
+      - name: Verify Django Debug Mode
+        run: |
+          DEBUG_VALUE=$(python -c "from django.conf import settings; print(settings.DEBUG)")
+          if [[ $DEBUG_VALUE == "True" ]]; then
+            echo "Django DEBUG mode is set to True. Deployment aborted."
+            exit 1
+          else
+            echo "Django DEBUG mode is set to False. Proceeding with deployment."
+          fi
 
       - name: Run Tests
         run: |
