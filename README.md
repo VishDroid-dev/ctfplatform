@@ -1,2 +1,2 @@
 # ctf-platform
-platform
+platform ctf
