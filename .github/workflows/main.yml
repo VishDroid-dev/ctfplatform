@@ -23,7 +23,7 @@ jobs:
           username: ${{ secrets.USERNAME }}
           password: ${{ secrets.PASSWORD }}
           script: |
-            cd /path/to/repository
+            cd /home/initcorp/ctfplatform
             git pull
             sudo systemctl restart nginx
             sudo systemctl restart gunicorn
