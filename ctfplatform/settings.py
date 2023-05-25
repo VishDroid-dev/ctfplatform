@@ -27,16 +27,21 @@ DEBUG = False
 
 ALLOWED_HOSTS = ['*']
 
-CSRF_TRUSTED_ORIGINS = ["https://*.initcrew.com"]
+CSRF_TRUSTED_ORIGINS = [
+    "https://initcorp.tech"
+    "https://initcrew.com"
+    "https;//*.initcrew.com"
+]
 
 AUTH_USER_MODEL = "core.CustomUser"
 # Application definition
 
 CORS_ALLOWED_ORIGINS = [
-"https://ctf.initcrew.com",
-"https://*.initcrew.com",
-"http://localhost:8000",
-"http://127.0.0.1:8000"
+    "https://initcorp.tech",
+    "https://ctf.initcrew.com",
+    "https://*.initcrew.com",
+    "http://localhost:8000",
+    "http://127.0.0.1:8000"
 ]
 
 LOGIN_URL = "/login/"
