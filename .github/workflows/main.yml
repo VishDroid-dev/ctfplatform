@@ -27,7 +27,7 @@ jobs:
           pip install -r requirements.txt
           
       - name: Set Django Settings Module
-        run: echo "DJANGO_SETTINGS_MODULE=myproject.settings" >> $GITHUB_ENV
+        run: echo "DJANGO_SETTINGS_MODULE=ctfplatform.settings" >> $GITHUB_ENV
 
       - name: Verify Django Debug Mode
         run: |
