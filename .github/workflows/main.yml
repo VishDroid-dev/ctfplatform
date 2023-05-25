@@ -22,16 +22,8 @@ jobs:
           host: ${{ secrets.REMOTEHOST }}
           username: ${{ secrets.USERNAME }}
           password: ${{ secrets.PASSWORD }}
-
-      - name: Pull latest changes
-        run: |
-          cd /home/initcorp/ctfplatform
-          git pull
-
-      - name: Restart Nginx
-        run: |
-          sudo systemctl restart nginx
-
-      - name: Restart Gunicorn
-        run: |
-          sudo systemctl restart gunicorn
+          script: |
+            cd /path/to/repository
+            git pull
+            sudo systemctl restart nginx
+            sudo systemctl restart gunicorn
