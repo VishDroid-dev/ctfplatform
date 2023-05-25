@@ -1,0 +1,29 @@
+name: Deploy Workflow
+
+on:
+  push:
+    branches:
+      - server 
+  pull_request:
+    branches:
+      - server  
+
+jobs:
+  deploy:
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: Checkout code
+        uses: actions/checkout@v2
+
+      - name: SSH into remote server
+        uses: appleboy/ssh-action@master
+        with:
+          host: ${{ secrets.REMOTEHOST }}
+          username: ${{ secrets.USERNAME }}
+          password: ${{ secrets.PASSWORD }}
+          script: |
+            cd /home/initcorp/ctfplatform
+            git pull
+            sudo systemctl restart nginx
+            sudo systemctl restart gunicorn
