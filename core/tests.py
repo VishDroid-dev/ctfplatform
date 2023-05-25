@@ -70,5 +70,3 @@ class ViewTestCase(TestCase):
         response = self.client.get(reverse('logout'))
         self.assertEqual(response.status_code, 302)
         self.assertRedirects(response, reverse('index'))
-
-
