@@ -49,5 +49,6 @@ jobs:
           script: |
             cd /home/initcorp/ctfplatform
             git pull
+            pip install -r requirements.txt
             sudo systemctl restart nginx
             sudo systemctl restart gunicorn
