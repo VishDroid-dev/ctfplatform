@@ -14,20 +14,22 @@ def index(request):
 def challenges(request):
     if request.method == "POST":
         flag = request.POST.get("flag")
-        challenges = Challenge.objects.all()
-        for challenge in challenges:
-            if flag == challenge.flag:
-                user = request.user
-                solve = Solve.objects.filter(user=user, challenge=challenge).first()
-                if solve is None:
-                    user.points += challenge.points
-                    user.save()
-                    Solve.objects.create(user=user, challenge=challenge)  # Create a Solve object to track solved challenges
-                    return render(request, "challenge.html", {"flag": "correct"})
-                else:
-                    return render(request, "challenge.html", {"flag": "Already solved"})
-        else:
-            return render(request, "challenge.html", {"flag": "incorrect"})
+        challenge = Challenge.objects.filter(flag=flag).first()
+        
+        if challenge is not None:
+            user = request.user
+            solve_exists = Solve.objects.filter(user=user, challenge=challenge).exists()
+
+            if not solve_exists:
+                user.points += challenge.points
+                user.save()
+                Solve.objects.create(user=user, challenge=challenge)  # Create a Solve object to track solved challenges
+                return render(request, "challenge.html", {"flag": "correct"})
+            else:
+                return render(request, "challenge.html", {"flag": "Already solved"})
+        
+        return render(request, "challenge.html", {"flag": "incorrect"})
+
     return render(request, "challenge.html")
 
 
